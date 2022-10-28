@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class StartTitle : MonoBehaviour
 {
     public GameObject btn;
+    public GameObject te;
+    public string tex;
 
-    void Start()
+    void Start() 
     {
-        btn = GameObject.Find("Button");
+        btn.SetActive(false); 
     }
 
     
@@ -18,10 +20,18 @@ public class StartTitle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (btn == null)
+        
+
+        if (te != null) //文字の入力が有ったらボタンを出現させるようにしたい。
         {
-            btn.SetActive(false);
+            btn.SetActive(true);
         }
+
+        if (tex != null)
+        {
+            btn.SetActive(true);
+        }
+
     }
 
     

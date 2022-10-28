@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Battle : MonoBehaviour
 {
@@ -14,5 +15,15 @@ public class Battle : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnclickWin()
+    {
+        SceneManager.LoadScene("Item");
+    }
+
+    public void OnclickLose()
+    {
+        SceneManager.LoadScene("StartTitle");
     }
 }
