@@ -12,7 +12,7 @@ public class StartTitle : MonoBehaviour
 
     void Start() 
     {
-        btn.SetActive(false); 
+        
     }
 
     
@@ -27,10 +27,7 @@ public class StartTitle : MonoBehaviour
             btn.SetActive(true);
         }
 
-        if (tex != null)
-        {
-            btn.SetActive(true);
-        }
+ 
 
     }
 
