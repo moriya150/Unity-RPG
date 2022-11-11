@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BattleMainSystem : MonoBehaviour
 {
-    public Unit player;
-    public Unit enemy;
+    public Unit Player;
+    public UnitEnemy Enemy;
     public GameObject ResultPanel;
     public GameObject GameOverPanel;
 
@@ -39,7 +39,7 @@ public class BattleMainSystem : MonoBehaviour
 
     void Update()
     {
-        if (player.hp == 0 ) //player‚ÌHP‚ª0‚È‚çƒQ[ƒ€ƒI[ƒo[‰æ–Ê‚ğ•\¦
+        if (Unit.Playerhp == 0 ) //player‚ÌHP‚ª0‚È‚çƒQ[ƒ€ƒI[ƒo[‰æ–Ê‚ğ•\¦
         {
             IsGameOver = true;
         }
@@ -50,7 +50,7 @@ public class BattleMainSystem : MonoBehaviour
             return;
         }
 
-        if (enemy.hp == 0) //“G‚ÌHP‚ª0‚È‚ç•ñV‰æ–Ê‚ğ•\¦
+        if (UnitEnemy.Enemyhp == 0) //“G‚ÌHP‚ª0‚È‚ç•ñV‰æ–Ê‚ğ•\¦
         {
             IsWin = true;
         }
@@ -61,24 +61,36 @@ public class BattleMainSystem : MonoBehaviour
         }
 
 
-        if (!IsPlayerTurn) //player‚ÌUŒ‚ŒãA1•bŒã‚Éenemy‚ÌUŒ‚
+        /*if (!IsPlayerTurn) //player‚ÌUŒ‚ŒãA1•bŒã‚Éenemy‚ÌUŒ‚
         {
             second += Time.deltaTime;
-            if (second >= 0.5f)
+            if (second >= 1f)
             {
                 second = 0;
                 IsPlayerTurn = true;
                 player.OnDamage(enemy.at);
             }
             
-        }
+        }*/
+
+        if (!IsPlayerTurn) //player‚ÌUŒ‚ŒãA1•bŒã‚Éenemy‚ÌUŒ‚
+{
+            second += Time.deltaTime;
+            if (second >= 1f)
+            {
+                second = 0;
+                Enemy.EnemyAttack();
+                IsPlayerTurn = true;
+            }
+
+}
     }
 
     public void PushAttackButton() //UŒ‚ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚ç‘Šè‚Éƒ_ƒ[ƒW
     {
         if (IsPlayerTurn)
         {
-            enemy.OnDamage(player.at);
+            Player.PlayerAttack();
             IsPlayerTurn = false;
         }
     }

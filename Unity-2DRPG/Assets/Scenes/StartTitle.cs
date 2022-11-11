@@ -36,5 +36,6 @@ public class StartTitle : MonoBehaviour
     public void Onclick()
     {
         SceneManager.LoadScene("Dungeon1");
+
     }
 }

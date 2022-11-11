@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Battle : MonoBehaviour
+public class Battle : MonoBehaviour //í“¬‰æ–Ê‚Ìƒtƒ‰ƒOŠÇ—
 {
     // Start is called before the first frame update
     void Start()

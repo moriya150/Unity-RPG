@@ -7,35 +7,41 @@ using UnityEngine.SceneManagement;
 
 public class PHPTitle : MonoBehaviour
 {
-        public static Text Name;
-        public InputField te;
+    public static string Name;
+    public InputField InputTE;
+    public GameObject LoadPanel; //load用のパネル
 
-        public void Button_Push()
+    public GameObject ButtonCa; //別のボタンを押さないように
+
+    public GameObject TAIKI;
+
+    public void Button_Push()
+    {
+        InputTE = InputTE.GetComponent<InputField>();
+
+        Name = InputTE.text; //入力した文字をstringに変換
+
+
+        /*if (Name == null)
         {
-            te = te.GetComponent<InputField>();
-            Name = Name.GetComponent<Text>();
+            return;     //未完成　空白だと戻る
 
-            Name.text = te.text; //入力した文字をtextに変換
+        }*/
 
-            
-        if (Name == null)
-            {
-                return;     //未完成　空白だと戻る
-               
-            }
+        StartCoroutine("Access"); // DBにデータを挿入して、ロード用のパネルの表示。
+        LoadPanel.SetActive(true);
+        ButtonCa.SetActive(false); //そのほかを非表示
+    }
 
-            else if(Name != null) 
-            {
-                SceneManager.LoadScene("Dungeon1");
-                StartCoroutine("Access");
-            }
-
+        public void Yomikomi()
+        {
+        TAIKI.SetActive(true);
         }
 
         private IEnumerator Access() 　//入力した名前のプレイヤーを新規作成
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("NAME", Name.GetComponentInChildren<InputField>().text);
+            dic.Add("NAME", Name);
 
             StartCoroutine(Post("http://localhost/dbaccess/Title-INSERT.php", dic));
 
@@ -65,7 +71,7 @@ public class PHPTitle : MonoBehaviour
                 }
                 else if (www.isDone)
                 {
-                   // QuestionText.GetComponent<Text>().text = www.downloadHandler.text;
+                   
                 }
             }
 
@@ -73,12 +79,15 @@ public class PHPTitle : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-        
+        LoadPanel.SetActive(false);
+        TAIKI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //InputTE = InputTE.GetComponent<InputField>();
+
+        //Name = InputTE.text; //入力した文字をstringに変換
     }
 }
