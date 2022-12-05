@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class PHPLoadTest : MonoBehaviour //タイトルで入力した名前をDBでロード
+// タイトルで入力した名前を使って、DBでロード
+public class PHPLoadTest : MonoBehaviour
 {
-
     public static string LoadNAME;
     public static string LoadLV;
     public static string LoadKISO_HP;
@@ -17,27 +17,12 @@ public class PHPLoadTest : MonoBehaviour //タイトルで入力した名前をDBでロード
     public static string LoadSOUBI_AT;
     public static string LoadSOUBI_DEF;
 
-    public static GameObject GONAME;  //画面に表示するためのGameObject
-    public static GameObject GOLV;
-    public static GameObject GOKISO_HP;
-    public static GameObject GOKISO_AT;
-    public static GameObject GOKISO_DEF;
-    public static GameObject GOEXP;
-    public static GameObject GOSOUBI_HP;
-    public static GameObject GOSOUBI_AT;
-    public static GameObject GOSOUBI_DEF;
-
-
     public void LoadDB()
     {
-
         LoadNAME = PHPTitle.Name;
         StartCoroutine("Dataload");
-        StartCoroutine("DelayCoroutine");
-        
+        StartCoroutine("DelayCoroutine");       
     }
-
-        
 
     public IEnumerator Dataload()
     {
@@ -53,12 +38,10 @@ public class PHPLoadTest : MonoBehaviour //タイトルで入力した名前をDBでロード
     {
         WWWForm form = new WWWForm();
 
-
         foreach (KeyValuePair<string, string> post_arg in post)
         {
             form.AddField(post_arg.Key, post_arg.Value);
         }
-
 
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))
         {
@@ -66,9 +49,8 @@ public class PHPLoadTest : MonoBehaviour //タイトルで入力した名前をDBでロード
 
             if (www.error != null)
             {
-                //そもそも接続ができていないとき
+                // そもそも接続ができていないとき
                 Debug.Log("HttpPost NG: " + www.error);
-
             }
             else if (www.isDone)
             {
@@ -84,16 +66,6 @@ public class PHPLoadTest : MonoBehaviour //タイトルで入力した名前をDBでロード
                 LoadSOUBI_AT    = data[8];
                 LoadSOUBI_DEF   = data[9];
 
-                /*GONAME.GetComponent<Text>().text = LoadNAME;//GameObjectにstring型を入れる
-                GOLV.GetComponent<Text>().text = LoadLV;
-                GOKISO_HP.GetComponent<Text>().text = LoadKISO_HP;
-                GOKISO_AT.GetComponent<Text>().text = LoadKISO_AT;
-                GOKISO_DEF.GetComponent<Text>().text = LoadKISO_DEF;
-                GOEXP.GetComponent<Text>().text = LoadEXP;
-                GOSOUBI_HP.GetComponent<Text>().text = LoadSOUBI_HP;
-                GOSOUBI_AT.GetComponent<Text>().text = LoadSOUBI_AT;
-                GOSOUBI_DEF.GetComponent<Text>().text = LoadSOUBI_DEF;*/
-
                 Debug.Log(LoadNAME);
                 Debug.Log(LoadLV);
                 Debug.Log(LoadKISO_HP);
@@ -103,13 +75,12 @@ public class PHPLoadTest : MonoBehaviour //タイトルで入力した名前をDBでロード
                 Debug.Log(LoadSOUBI_HP);
                 Debug.Log(LoadSOUBI_AT);
                 Debug.Log(LoadSOUBI_DEF);
-
             }
         }
-
     }
 
-    public IEnumerator DelayCoroutine() //7秒待つコルーチン
+    // 7秒待つコルーチン
+    public IEnumerator DelayCoroutine()
     {
         yield return new WaitForSeconds(7);
 

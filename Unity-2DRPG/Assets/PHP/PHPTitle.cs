@@ -9,36 +9,38 @@ public class PHPTitle : MonoBehaviour
 {
     public static string Name;
     public InputField InputTE;
-    public GameObject LoadPanel; //load用のパネル
 
-    public GameObject ButtonCa; //別のボタンを押さないように
+    // load用のパネル
+    public GameObject LoadPanel;
 
+    // 別のボタンを押さないように
+    public GameObject ButtonCa;
+
+    // 読み込み中のテキスト用
     public GameObject TAIKI;
 
+    // 入力した名前のプレイヤーを新規作成
     public void Button_Push()
     {
         InputTE = InputTE.GetComponent<InputField>();
 
-        Name = InputTE.text; //入力した文字をstringに変換
+        // 入力した文字をstringに変換
+        Name = InputTE.text;
 
-
-        /*if (Name == null)
-        {
-            return;     //未完成　空白だと戻る
-
-        }*/
-
-        StartCoroutine("Access"); // DBにデータを挿入して、ロード用のパネルの表示。
+        // DBにデータを挿入して、ロード用のパネルの表示　その他を非表示
+        StartCoroutine("Access");
         LoadPanel.SetActive(true);
-        ButtonCa.SetActive(false); //そのほかを非表示
+        ButtonCa.SetActive(false);
     }
-
+        
+        // 読み込み中のテキスト表示
         public void Yomikomi()
         {
-        TAIKI.SetActive(true);
+            TAIKI.SetActive(true);
         }
-
-        private IEnumerator Access() 　//入力した名前のプレイヤーを新規作成
+        
+        //入力した名前のプレイヤーを新規作成
+        private IEnumerator Access()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
             dic.Add("NAME", Name);
@@ -52,12 +54,10 @@ public class PHPTitle : MonoBehaviour
         {
             WWWForm form = new WWWForm();
 
-
             foreach (KeyValuePair<string, string> post_arg in post)
             {
                 form.AddField(post_arg.Key, post_arg.Value);
             }
-
 
             using (UnityWebRequest www = UnityWebRequest.Post(url, form))
             {
@@ -67,27 +67,25 @@ public class PHPTitle : MonoBehaviour
                 {
                     //そもそも接続ができていないとき
                     Debug.Log("HttpPost NG: " + www.error);
-
                 }
                 else if (www.isDone)
                 {
                    
                 }
             }
-
         }
+
         // Start is called before the first frame update
         void Start()
-    {
-        LoadPanel.SetActive(false);
-        TAIKI.SetActive(false);
-    }
+        {   
+            // 初期にパネルの非表示
+            LoadPanel.SetActive(false);
+            TAIKI.SetActive(false);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //InputTE = InputTE.GetComponent<InputField>();
+        // Update is called once per frame
+        void Update()
+        {
 
-        //Name = InputTE.text; //入力した文字をstringに変換
-    }
+        }
 }

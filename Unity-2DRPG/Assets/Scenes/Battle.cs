@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Battle : MonoBehaviour //戦闘画面のフラグ管理
+// 戦闘画面のシーン変移ボタン
+public class Battle : MonoBehaviour 
 {
     // Start is called before the first frame update
     void Start()

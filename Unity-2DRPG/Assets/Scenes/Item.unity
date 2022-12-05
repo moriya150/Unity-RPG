@@ -274,7 +274,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u88C5\u5099\n"
 --- !u!222 &116587118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 166518233}
   - component: {fileID: 166518232}
   m_Layer: 5
-  m_Name: Power
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,6 +443,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892150689}
   m_CullTransparentMesh: 1
+--- !u!1 &1103084524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103084525}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1103084525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103084524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 611.8085, y: 381.2795, z: -3.0755012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282346499
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,12 +571,12 @@ GameObject:
   - component: {fileID: 1307959595}
   - component: {fileID: 1307959594}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: "\u88C5\u5099"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1307959593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -660,6 +691,10 @@ GameObject:
   - component: {fileID: 1616346199}
   - component: {fileID: 1616346198}
   - component: {fileID: 1616346197}
+  - component: {fileID: 1616346203}
+  - component: {fileID: 1616346202}
+  - component: {fileID: 1616346201}
+  - component: {fileID: 1616346200}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -717,6 +752,92 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616346200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616346196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89915f84487ea6f458cdcb3b5dbfa050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNAME: 
+  STLV: 
+  STHP: 
+  STMAXHP: 
+  STAT: 
+  STDEF: 
+  UINAME: {fileID: 115443549}
+  UILV: {fileID: 1824838900}
+  UIHP: {fileID: 1103084524}
+  UIMAXHP: {fileID: 166518230}
+  UIAT: {fileID: 1811062049}
+  UIDEF: {fileID: 2059534768}
+  BTSTARTPanel: {fileID: 0}
+  UICanvas: {fileID: 0}
+  UIEnemyCanvas: {fileID: 0}
+--- !u!114 &1616346201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616346196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1a6581818e4e74486279f16c5cabbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "LVUP\u5909\u6570": 1
+  "LVUP\u500D\u6570": 100
+  KISO_HP_kakeru: 0
+  KISO_AT_kakeru: 0
+  KISO_DEF_kakeru: 0
+  UPNAME: 
+  UPLV: 
+  UPKISO_HP: 
+  UPKISO_AT: 
+  UPKISO_DEF: 
+  UPEXP: 
+  UPSOUBI_HP: 
+  UPSOUBI_AT: 
+  UPSOUBI_DEF: 
+--- !u!114 &1616346202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616346196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641f13c3da163514b83df1c39e7c43c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1616346203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616346196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968b63d0ade90c84fbb237662aac7dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Enemy: {fileID: 0}
+  ResultPanel: {fileID: 0}
+  GameOverPanel: {fileID: 0}
+  ENEMYPanel: {fileID: 0}
+  Button: {fileID: 0}
+  Button2: {fileID: 0}
+  PlayerUIPanel: {fileID: 0}
+  EnemyUIPanel: {fileID: 0}
 --- !u!1 &1664770967
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1745745260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -933,7 +1054,7 @@ GameObject:
   - component: {fileID: 1806704648}
   - component: {fileID: 1806704651}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DungeonSELECT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,6 +1137,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1616346202}
+        m_TargetAssemblyTypeName: PHPLoadTest, Assembly-CSharp
+        m_MethodName: LoadDB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1806704649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,7 +1211,7 @@ GameObject:
   - component: {fileID: 1811062052}
   - component: {fileID: 1811062051}
   m_Layer: 5
-  m_Name: Def
+  m_Name: AT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,7 +1291,7 @@ GameObject:
   - component: {fileID: 1824838903}
   - component: {fileID: 1824838902}
   m_Layer: 5
-  m_Name: HP
+  m_Name: LV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,7 +1371,7 @@ GameObject:
   - component: {fileID: 2059534771}
   - component: {fileID: 2059534770}
   m_Layer: 5
-  m_Name: EXP
+  m_Name: DEF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 1.8
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0

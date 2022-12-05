@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// メインとなる戦闘システム
 public class BattleMainSystem : MonoBehaviour
 {
     public Unit Player;
     public UnitEnemy Enemy;
+
+    public static int ALLEXP = 0;
+
     public GameObject ResultPanel;
     public GameObject GameOverPanel;
+
+    public GameObject ENEMYPanel;
+    public GameObject Button;
+    public GameObject Button2;
+    public GameObject PlayerUIPanel;
+    public GameObject EnemyUIPanel;
 
     bool IsPlayerTurn;
     bool IsGameOver;
@@ -17,29 +27,63 @@ public class BattleMainSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 初期状態の設定
         IsPlayerTurn = true;
         IsWin = false;
         IsGameOver = false;
         ResultPanel.SetActive(false);
         GameOverPanel.SetActive(false);
 
+        returnSetActive();
     }
 
-    void ViewResult()//リザルト画面の表示をON
+    // 敵を倒した時に、経験値を合計する
+    public void EXP() 
+    {
+        ALLEXP = int.Parse(PHPEnemyLoad.LoadEnemyEXP) + int.Parse(PHPLoadTest.LoadEXP);
+    }
+
+    // リザルト画面の表示をON
+    void ViewResult()
     {
         ResultPanel.SetActive(true);
+
+        EXP();
+
+        ENEMYPanel.SetActive(false);
+        PlayerUIPanel.SetActive(false);
+        EnemyUIPanel.SetActive(false);
+        Button.SetActive(false);
+        Button2.SetActive(false);
     }
 
-    void ViewGameOver() //ゲームオーバー画面の表示をON
+    // ゲームオーバー画面の表示をON
+    void ViewGameOver() 
     {
         GameOverPanel.SetActive(true);
-    }
-    
 
+        ENEMYPanel.SetActive(false);
+        PlayerUIPanel.SetActive(false);
+        EnemyUIPanel.SetActive(false);
+        Button.SetActive(false);
+        Button2.SetActive(false);
+    }
+
+    // トリガーを元に戻す
+    public void returnSetActive() 
+    {
+        IsWin = false;
+        IsGameOver = false;
+        IsPlayerTurn = true;
+        
+        ResultPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+    }
 
     void Update()
     {
-        if (Unit.Playerhp == 0 ) //playerのHPが0ならゲームオーバー画面を表示
+        // PlayerのHPが0ならゲームオーバー画面を表示
+        if (Unit.Playerhp == 0 ) 
         {
             IsGameOver = true;
         }
@@ -50,43 +94,34 @@ public class BattleMainSystem : MonoBehaviour
             return;
         }
 
-        if (UnitEnemy.Enemyhp == 0) //敵のHPが0なら報酬画面を表示
+        // 敵のHPが0なら報酬画面を表示
+        if (UnitEnemy.Enemyhp == 0)
         {
             IsWin = true;
         }
+
         if (IsWin)
         {
             ViewResult();
             return;
         }
 
-
-        /*if (!IsPlayerTurn) //playerの攻撃後、1秒後にenemyの攻撃
+        // Playerの攻撃後、1秒後にenemyの攻撃
+        if (!IsPlayerTurn)
         {
             second += Time.deltaTime;
             if (second >= 1f)
             {
                 second = 0;
                 IsPlayerTurn = true;
-                player.OnDamage(enemy.at);
-            }
-            
-        }*/
-
-        if (!IsPlayerTurn) //playerの攻撃後、1秒後にenemyの攻撃
-{
-            second += Time.deltaTime;
-            if (second >= 1f)
-            {
-                second = 0;
                 Enemy.EnemyAttack();
-                IsPlayerTurn = true;
+                
             }
-
-}
+        }
     }
 
-    public void PushAttackButton() //攻撃ボタンを押したら相手にダメージ
+    // 攻撃ボタンを押したら敵にダメージ
+    public void PushAttackButton()
     {
         if (IsPlayerTurn)
         {

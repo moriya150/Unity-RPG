@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// ‘•”õ—pi–¢ì¬j
 public class Item : MonoBehaviour
 {
     // Start is called before the first frame update
