@@ -83,12 +83,11 @@ NameUI.Start () (at Assets/battle/NameUI.cs:29)
 ・あとはレベルの概念の作成と、敵のプレハブと、敵のDB作成、余裕があれば戦闘システムの改良。
 
 A Native Collection has not been disposed, resulting in a memory leak. Enable Full StackTraces to get more details.
-A Native Collection has not been disposed, resulting in a memory leak. Enable Full StackTraces to get more details.
 
 11/10
 ・きちんとロードできるときとできないときがある。→updateを使うことで解決
 
 11/11
 ・エラーの原因→無駄にusingを使っていたこと？（なぜこうなるかは不明）
-・エラーの原因→DBからロードするための時間を確保しないといけない？
+・エラーの原因→DBからロードするための時間を確保しないといけない？→読み込み時間を作ったら解決
 ・攻撃
