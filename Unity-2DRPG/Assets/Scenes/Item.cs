@@ -8,11 +8,12 @@ using UnityEngine.SceneManagement;
 public class Item : MonoBehaviour
 {
     public GameObject DungeonButton;
+    public GameObject LoadPanelItem;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoadPanelItem.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Item : MonoBehaviour
 
     public void Onclick()
     {
+        LoadPanelItem.SetActive(true);
         DungeonButton.SetActive(false);
         StartCoroutine("DelayCoroutine3");      
     }
