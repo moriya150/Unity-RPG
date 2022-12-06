@@ -317,33 +317,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 553636662}
-        m_TargetAssemblyTypeName: UnitEnemy, Assembly-CSharp
-        m_MethodName: "\u4EEEEnemy_load"
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 553636663}
-        m_TargetAssemblyTypeName: BattleMainSystem, Assembly-CSharp
-        m_MethodName: returnSetActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 553636664}
         m_TargetAssemblyTypeName: Unit, Assembly-CSharp
         m_MethodName: "\u4EEEPlayer_load"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 553636665}
+        m_TargetAssemblyTypeName: Dungeon, Assembly-CSharp
+        m_MethodName: "\u4EEEEnemy_load"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -739,9 +727,8 @@ GameObject:
   - component: {fileID: 553636661}
   - component: {fileID: 553636660}
   - component: {fileID: 553636659}
-  - component: {fileID: 553636662}
-  - component: {fileID: 553636663}
   - component: {fileID: 553636664}
+  - component: {fileID: 553636665}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -799,45 +786,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &553636662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553636658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da2543290a9aab45b9fb76d850b26ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  STEnemyNAME: 
-  STEnemyHP: 30
-  STEnemyHPMAX: 30
-  UIEnemyNAME: {fileID: 0}
-  UIEnemyHP: {fileID: 0}
-  UIEnemyHPMAX: {fileID: 0}
---- !u!114 &553636663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553636658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968b63d0ade90c84fbb237662aac7dac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  Enemy: {fileID: 0}
-  ResultPanel: {fileID: 0}
-  GameOverPanel: {fileID: 0}
-  ENEMYPanel: {fileID: 0}
-  Button: {fileID: 0}
-  Button2: {fileID: 0}
-  PlayerUIPanel: {fileID: 0}
-  EnemyUIPanel: {fileID: 0}
 --- !u!114 &553636664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,6 +796,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1ca7c7fe587e0342a8ad8df87affcb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &553636665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553636658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0603d4c36ed86a343a679b908cf04a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &959186473
@@ -1301,33 +1261,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 553636662}
-        m_TargetAssemblyTypeName: UnitEnemy, Assembly-CSharp
-        m_MethodName: "\u4EEEEnemy_load"
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 553636663}
-        m_TargetAssemblyTypeName: BattleMainSystem, Assembly-CSharp
-        m_MethodName: returnSetActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 553636664}
         m_TargetAssemblyTypeName: Unit, Assembly-CSharp
         m_MethodName: "\u4EEEPlayer_load"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 553636665}
+        m_TargetAssemblyTypeName: Dungeon, Assembly-CSharp
+        m_MethodName: "\u4EEEEnemy_load"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1849,33 +1797,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 553636662}
-        m_TargetAssemblyTypeName: UnitEnemy, Assembly-CSharp
-        m_MethodName: "\u4EEEEnemy_load"
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 553636663}
-        m_TargetAssemblyTypeName: BattleMainSystem, Assembly-CSharp
-        m_MethodName: returnSetActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 553636664}
         m_TargetAssemblyTypeName: Unit, Assembly-CSharp
         m_MethodName: "\u4EEEPlayer_load"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 553636665}
+        m_TargetAssemblyTypeName: Dungeon, Assembly-CSharp
+        m_MethodName: "\u4EEEEnemy_load"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

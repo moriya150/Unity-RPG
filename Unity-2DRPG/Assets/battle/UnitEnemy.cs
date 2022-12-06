@@ -29,15 +29,6 @@ public class UnitEnemy : MonoBehaviour
         
     }
 
-    // hpが0だとエラーが起きるので仮の数字を入力
-    public void 仮Enemy_load()
-    {
-        Enemyhp     = 30;
-        EnemyhpMax  = 30;
-        Enemyat     = 10;
-        Enemydef    = 5;
-    }
-
     // 敵の名前とHPとMAXHPを表示
     public void BTSTART_UIEnemy()
     {
