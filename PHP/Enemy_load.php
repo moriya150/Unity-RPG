@@ -1,18 +1,17 @@
 <?php
 
-require_once('rpg_connect.php');
-$db = connectDB();
+    require_once('rpg_connect.php');
+    $db = connectDB();
 
-$ENEMY_ID = $_POST["ENEMY_ID"];
+    $ENEMY_ID = $_POST["ENEMY_ID"];
 
 
-   $sql = 'SELECT * FROM enemytable WHERE ENEMY_ID = "'.$ENEMY_ID.'" LIMIT 1';
+    $sql = 'SELECT * FROM enemytable WHERE ENEMY_ID = "'.$ENEMY_ID.'"';
 
     $result = mysqli_query($db, $sql);
 
     while($data = $result->fetch_assoc())
     {
-
         $res = $data['ENEMY_ID'];
         $res .= ",".$data['NAME'];
         $res .= ",".$data['HP'];
@@ -20,7 +19,6 @@ $ENEMY_ID = $_POST["ENEMY_ID"];
         $res .= ",".$data['DEF'];
         $res .= ",".$data['EXP'];
     }
-
 
     $db = mysqli_close($db);
 

@@ -1,18 +1,16 @@
 <?php
 
-require_once('rpg_connect.php');
-$db = connectDB();
+    require_once('rpg_connect.php');
+    $db = connectDB();
 
-$NAME = $_POST["NAME"];
+    $NAME = $_POST["NAME"];
 
-
-   $sql = 'SELECT * FROM playertable WHERE NAME = "'.$NAME.'" LIMIT 1';
+    $sql = 'SELECT * FROM playertable WHERE NAME = "'.$NAME.'" LIMIT 1';
 
     $result = mysqli_query($db, $sql);
 
     while($data = $result->fetch_assoc())
     {
-
         $res = $data['PLAYER_ID'];
         $res .= ",".$data['NAME'];
         $res .= ",".$data['LV'];
@@ -24,7 +22,6 @@ $NAME = $_POST["NAME"];
         $res .= ",".$data['SOUBI_AT'];
         $res .= ",".$data['SOUBI_DEF'];
     }
-
 
     $db = mysqli_close($db);
 
