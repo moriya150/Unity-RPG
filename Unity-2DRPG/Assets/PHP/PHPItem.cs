@@ -52,37 +52,37 @@ public class PHPItem : MonoBehaviour
         UIEnemyCanvas.SetActive(true);
 
         // DBÇ©ÇÁì«Ç›çûÇÒÇæñºëO
-        PlayerNAME = PHPLoadTest.LoadNAME;
+        PlayerNAME = PHPLoad.LoadNAME;
 
         // DBÇ©ÇÁì«Ç›çûÇÒÇæÇ‡ÇÃÇintå^Ç…ïœä∑
-        LV = int.Parse(PHPLoadTest.LoadLV);
-        MAXHP = int.Parse(PHPLoadTest.LoadKISO_HP) + int.Parse(PHPLoadTest.LoadSOUBI_HP);
-        HP = int.Parse(PHPLoadTest.LoadKISO_HP) + int.Parse(PHPLoadTest.LoadSOUBI_HP);
-        AT = int.Parse(PHPLoadTest.LoadKISO_AT) + int.Parse(PHPLoadTest.LoadSOUBI_AT);
-        DEF = int.Parse(PHPLoadTest.LoadKISO_DEF) + int.Parse(PHPLoadTest.LoadSOUBI_DEF);
+        LV      = int.Parse(PHPLoad.LoadLV);
+        MAXHP   = int.Parse(PHPLoad.LoadKISO_HP)  + int.Parse(PHPLoad.LoadSOUBI_HP);
+        HP      = int.Parse(PHPLoad.LoadKISO_HP)  + int.Parse(PHPLoad.LoadSOUBI_HP);
+        AT      = int.Parse(PHPLoad.LoadKISO_AT)  + int.Parse(PHPLoad.LoadSOUBI_AT);
+        DEF     = int.Parse(PHPLoad.LoadKISO_DEF) + int.Parse(PHPLoad.LoadSOUBI_DEF);
 
         // GameObjectÇ…ì¸ÇÍÇÈÇΩÇﬂÇ…Ç¢Ç¡ÇΩÇÒstringÇ…ïœä∑
-        STLV = LV.ToString();    
-        STHP = HP.ToString();
+        STLV    = LV.ToString();    
+        STHP    = HP.ToString();
         STMAXHP = MAXHP.ToString();
-        STAT = AT.ToString();
-        STDEF = DEF.ToString();
+        STAT    = AT.ToString();
+        STDEF   = DEF.ToString();
 
         // updateï∂ÇÃâeãøÇ≈êÊÇ…ílÇì¸ÇÍÇ∆Ç≠ 
         StaticSTHP = HP.ToString();
 
         // ï\é¶Ç≥ÇπÇÈÇΩÇﬂÇ…GameObjectÇ…stringå^Çì¸ÇÍÇÈ
-        UINAME.GetComponent<Text>().text = PlayerNAME;   
-        UILV.GetComponent<Text>().text = STLV;
-        UIHP.GetComponent<Text>().text = STHP;
-        UIMAXHP.GetComponent<Text>().text = STMAXHP;
-        UIAT.GetComponent<Text>().text = STAT;
-        UIDEF.GetComponent<Text>().text = STDEF;
+        UINAME.GetComponent<Text>().text    = PlayerNAME;   
+        UILV.GetComponent<Text>().text      = STLV;
+        UIHP.GetComponent<Text>().text      = STHP;
+        UIMAXHP.GetComponent<Text>().text   = STMAXHP;
+        UIAT.GetComponent<Text>().text      = STAT;
+        UIDEF.GetComponent<Text>().text     = STDEF;
 
-        Unit.Playerhp = HP;
+        Unit.Playerhp    = HP;
         Unit.PlayerhpMax = MAXHP;
-        Unit.Playerat = AT;
-        Unit.Playerdef = DEF;
+        Unit.Playerat    = AT;
+        Unit.Playerdef   = DEF;
     }
 
     // Start is called before the first frame update

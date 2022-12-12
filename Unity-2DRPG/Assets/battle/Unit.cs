@@ -43,7 +43,7 @@ public class Unit : MonoBehaviour
     }
 
     // hp‚ª0‚¾‚ÆƒGƒ‰[‚ª‹N‚«‚é‚Ì‚Å‰¼‚Ì”š‚ğ“ü—Í
-    public void ‰¼Player_load()
+    public void TemporarilyPlayer_load()
     {
         Playerhp = 2;
         PlayerhpMax = 2;

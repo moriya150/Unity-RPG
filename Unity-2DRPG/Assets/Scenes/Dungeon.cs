@@ -46,7 +46,7 @@ public class Dungeon : MonoBehaviour
     }
 
     // hp‚ª0‚¾‚ÆƒGƒ‰[‚ª‹N‚«‚é‚Ì‚Å‰¼‚Ì”š‚ğ“ü—Í
-    public void ‰¼Enemy_load()
+    public void TemporarilyEnemy_load()
     {
         UnitEnemy.Enemyhp = 30;
         UnitEnemy.EnemyhpMax = 30;

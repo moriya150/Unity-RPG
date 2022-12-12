@@ -15,27 +15,14 @@ public class StartTitle : MonoBehaviour
         
     }
 
-    
-
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (te != null) //文字の入力が有ったらボタンを出現させるようにしたい。
-        {
-            btn.SetActive(true);
-        }
-
- 
 
     }
-
-    
 
     public void Onclick()
     {
         SceneManager.LoadScene("Dungeon1");
-
     }
 }

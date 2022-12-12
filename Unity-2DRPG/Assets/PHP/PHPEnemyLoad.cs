@@ -109,17 +109,17 @@ public class PHPEnemyLoad : MonoBehaviour
             {
                 string[] data = www.downloadHandler.text.Split(',');
 
-                LoadEnemyNAME = data[1];
-                LoadEnemyHP = data[2];
-                LoadEnemyAT = data[3];
-                LoadEnemyDEF = data[4];
-                LoadEnemyEXP = data[5];
+                LoadEnemyNAME   = data[1];
+                LoadEnemyHP     = data[2];
+                LoadEnemyAT     = data[3];
+                LoadEnemyDEF    = data[4];
+                LoadEnemyEXP    = data[5];
 
                 // ŒvŽZ—p‚É‘ã“ü
-                UnitEnemy.Enemyhp = int.Parse(LoadEnemyHP);
-                UnitEnemy.EnemyhpMax = int.Parse(LoadEnemyHP);
-                UnitEnemy.Enemyat = int.Parse(LoadEnemyAT);
-                UnitEnemy.Enemydef = int.Parse(LoadEnemyDEF);
+                UnitEnemy.Enemyhp       = int.Parse(LoadEnemyHP);
+                UnitEnemy.EnemyhpMax    = int.Parse(LoadEnemyHP);
+                UnitEnemy.Enemyat       = int.Parse(LoadEnemyAT);
+                UnitEnemy.Enemydef      = int.Parse(LoadEnemyDEF);
             }
         }
     }

@@ -11,7 +11,7 @@ public class LVUP : MonoBehaviour
 
     void LVUPP()
     {
-        LVUP•Ï” = int.Parse(PHPLoadTest.LoadLV);
+        LVUP•Ï” = int.Parse(PHPLoad.LoadLV);
 
         if (BattleMainSystem.ALLEXP >= LVUP•Ï” * LVUP”{”) 
         {

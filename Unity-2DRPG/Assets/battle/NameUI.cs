@@ -51,14 +51,14 @@ public class NameUI : MonoBehaviour
             UIEnemyCanvas.SetActive(true);
 
             // DBÇ©ÇÁì«Ç›çûÇÒÇæñºëO
-            PlayerNAME = PHPLoadTest.LoadNAME;
+            PlayerNAME = PHPLoad.LoadNAME;
 
             // DBÇ©ÇÁì«Ç›çûÇÒÇæÇ‡ÇÃÇintå^Ç…ïœä∑
-            LV = int.Parse(PHPLoadTest.LoadLV);
-            MAXHP = int.Parse(PHPLoadTest.LoadKISO_HP) + int.Parse(PHPLoadTest.LoadSOUBI_HP);
-            HP    = int.Parse(PHPLoadTest.LoadKISO_HP) + int.Parse(PHPLoadTest.LoadSOUBI_HP);
-            AT    = int.Parse(PHPLoadTest.LoadKISO_AT) + int.Parse(PHPLoadTest.LoadSOUBI_AT);
-            DEF   = int.Parse(PHPLoadTest.LoadKISO_DEF) + int.Parse(PHPLoadTest.LoadSOUBI_DEF);
+            LV = int.Parse(PHPLoad.LoadLV);
+            MAXHP = int.Parse(PHPLoad.LoadKISO_HP) + int.Parse(PHPLoad.LoadSOUBI_HP);
+            HP    = int.Parse(PHPLoad.LoadKISO_HP) + int.Parse(PHPLoad.LoadSOUBI_HP);
+            AT    = int.Parse(PHPLoad.LoadKISO_AT) + int.Parse(PHPLoad.LoadSOUBI_AT);
+            DEF   = int.Parse(PHPLoad.LoadKISO_DEF) + int.Parse(PHPLoad.LoadSOUBI_DEF);
 
             // GameObjectÇ…ì¸ÇÍÇÈÇΩÇﬂÇ…Ç¢Ç¡ÇΩÇÒstringÇ…ïœä∑
             STLV = LV.ToString();

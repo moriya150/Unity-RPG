@@ -40,7 +40,7 @@ public class BattleMainSystem : MonoBehaviour
     // 敵を倒した時に、経験値を合計する
     public void EXP() 
     {
-        ALLEXP = int.Parse(PHPEnemyLoad.LoadEnemyEXP) + int.Parse(PHPLoadTest.LoadEXP);
+        ALLEXP = int.Parse(PHPEnemyLoad.LoadEnemyEXP) + int.Parse(PHPLoad.LoadEXP);
     }
 
     // リザルト画面の表示をON

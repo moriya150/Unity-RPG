@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 // タイトルで入力した名前を使って、DBでロード
-public class PHPLoadTest : MonoBehaviour
+public class PHPLoad : MonoBehaviour
 {
     public static string LoadNAME;
     public static string LoadLV;

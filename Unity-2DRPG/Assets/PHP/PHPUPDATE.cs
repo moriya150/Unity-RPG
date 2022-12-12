@@ -26,16 +26,16 @@ public class PHPUPDATE : MonoBehaviour
     // 経験値が一定を超えたらレベルアップ　AND　DBにアップデート
     public void LVUP()
     {
-        LVUP変数 = int.Parse(PHPLoadTest.LoadLV);
+        LVUP変数 = int.Parse(PHPLoad.LoadLV);
 
         if (BattleMainSystem.ALLEXP >= LVUP変数 * LVUP倍数)
         {
             LVUP変数++;
             LVUP倍数 = LVUP倍数 * 2;
 
-            KISO_HP_kakeru = int.Parse(PHPLoadTest.LoadKISO_HP);
-            KISO_AT_kakeru = int.Parse(PHPLoadTest.LoadKISO_AT);
-            KISO_DEF_kakeru = int.Parse(PHPLoadTest.LoadKISO_DEF);
+            KISO_HP_kakeru = int.Parse(PHPLoad.LoadKISO_HP);
+            KISO_AT_kakeru = int.Parse(PHPLoad.LoadKISO_AT);
+            KISO_DEF_kakeru = int.Parse(PHPLoad.LoadKISO_DEF);
 
             KISO_HP_kakeru = KISO_HP_kakeru + KISO_HP_kakeru;
             KISO_AT_kakeru = KISO_AT_kakeru + KISO_AT_kakeru;
@@ -54,18 +54,18 @@ public class PHPUPDATE : MonoBehaviour
     // EXPだけUPDATE
     public void UPDATE_EXP()
     {
-        UPNAME      = PHPLoadTest.LoadNAME; ;
-        UPLV        = PHPLoadTest.LoadLV;
-        UPKISO_HP   = PHPLoadTest.LoadKISO_HP;
-        UPKISO_AT   = PHPLoadTest.LoadKISO_AT;
-        UPKISO_DEF  = PHPLoadTest.LoadKISO_DEF;
+        UPNAME      = PHPLoad.LoadNAME; ;
+        UPLV        = PHPLoad.LoadLV;
+        UPKISO_HP   = PHPLoad.LoadKISO_HP;
+        UPKISO_AT   = PHPLoad.LoadKISO_AT;
+        UPKISO_DEF  = PHPLoad.LoadKISO_DEF;
 
         UPEXP       = BattleMainSystem.ALLEXP.ToString();
 
         // 装備の概念を作ったら変更予定
-        UPSOUBI_HP = PHPLoadTest.LoadSOUBI_HP;     
-        UPSOUBI_AT  = PHPLoadTest.LoadSOUBI_AT;
-        UPSOUBI_DEF = PHPLoadTest.LoadSOUBI_DEF;
+        UPSOUBI_HP = PHPLoad.LoadSOUBI_HP;     
+        UPSOUBI_AT  = PHPLoad.LoadSOUBI_AT;
+        UPSOUBI_DEF = PHPLoad.LoadSOUBI_DEF;
 
         StartCoroutine("LVUPLOAD");
         StartCoroutine("DelayCoroutine3");
@@ -74,7 +74,7 @@ public class PHPUPDATE : MonoBehaviour
     // LVUPをDBに反映
     public void UPDATE_LVUP()
     {
-        UPNAME      = PHPLoadTest.LoadNAME;
+        UPNAME      = PHPLoad.LoadNAME;
 
         UPLV        = LVUP変数.ToString();
 
@@ -85,9 +85,9 @@ public class PHPUPDATE : MonoBehaviour
         UPEXP       = BattleMainSystem.ALLEXP.ToString();
 
         // 装備の概念を作ったら変更予定
-        UPSOUBI_HP = PHPLoadTest.LoadSOUBI_HP;
-        UPSOUBI_AT  = PHPLoadTest.LoadSOUBI_AT;
-        UPSOUBI_DEF = PHPLoadTest.LoadSOUBI_DEF;
+        UPSOUBI_HP = PHPLoad.LoadSOUBI_HP;
+        UPSOUBI_AT  = PHPLoad.LoadSOUBI_AT;
+        UPSOUBI_DEF = PHPLoad.LoadSOUBI_DEF;
         
         StartCoroutine("LVUPLOAD");
         StartCoroutine("DelayCoroutine3");
