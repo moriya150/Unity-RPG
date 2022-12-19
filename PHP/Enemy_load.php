@@ -5,7 +5,6 @@
 
     $ENEMY_ID = $_POST["ENEMY_ID"];
 
-
     $sql = 'SELECT * FROM enemytable WHERE ENEMY_ID = "'.$ENEMY_ID.'"';
 
     $result = mysqli_query($db, $sql);
